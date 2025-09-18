@@ -1,0 +1,39 @@
+model Message {
+  id          String   @id @default(uuid())
+  text        String   @default("")
+  senderId    String
+  chatId      String
+  voiceId     String?  @unique
+  videoId     String?  @unique
+  imageId     String?  @unique
+  createdDate DateTime @default(now())
+  chat        Chat     @relation(fields: [chatId], references: [id])
+  image       Image?   @relation(fields: [imageId], references: [id])
+  sender      User     @relation(fields: [senderId], references: [username],onDelete: Cascade,onUpdate: Cascade)
+  video       Video?   @relation(fields: [videoId], references: [id])
+  voice       Voice?   @relation(fields: [voiceId], references: [id])
+}
+
+model Voice {
+  id       String   @id @default(uuid())
+  audioUrl String
+  duration Int
+  message  Message?
+}
+
+model Video {
+  id           String   @id @default(uuid())
+  videoUrl     String
+  duration     Int
+  thumbnailUrl String?
+  message      Message?
+}
+
+model Image {
+  id       String   @id @default(uuid())
+  imageUrl String
+  altText  String?
+  width    Int?
+  height   Int?
+  message  Message?
+}

@@ -1,0 +1,10 @@
+model User {
+  name        String
+  username    String     @id @unique
+  profile     String
+  password    String
+  createdDate DateTime   @default(now())
+  Messages    Message[] 
+  session     Sessions[]
+  Chats        Chat[] 
+}

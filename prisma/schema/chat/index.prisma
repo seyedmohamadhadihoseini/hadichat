@@ -1,0 +1,8 @@
+model Chat {
+  id          String    @id @default(uuid())
+  createdDate DateTime  @default(now())
+  profile     String?
+  title       String
+  Messages    Message[]
+  Users        User[]
+}

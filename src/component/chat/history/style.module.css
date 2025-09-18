@@ -1,0 +1,6 @@
+.container{
+    overflow-y: auto;
+    flex: 1;
+    background-color: rgb(61 59 59);
+    color: beige;
+}

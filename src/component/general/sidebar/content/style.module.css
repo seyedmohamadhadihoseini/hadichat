@@ -1,0 +1,17 @@
+.itembar{
+    border-radius: 8px;
+    background-color: black;
+    color: bisque;
+    margin-top: 5px;
+    padding: 2px;
+}
+
+.itembar img{
+    border-radius: 50%;
+}
+
+.active{
+    background-color: orange;
+    color: black;
+    
+}

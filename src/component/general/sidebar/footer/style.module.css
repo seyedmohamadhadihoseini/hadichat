@@ -1,0 +1,10 @@
+.content{
+    width: 15rem;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    background-color: rgb(133 179 194);
+}
+
+.content >div{
+    cursor: pointer;
+}

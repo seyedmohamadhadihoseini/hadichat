@@ -1,0 +1,17 @@
+.container {
+    text-align: center;
+}
+
+.container h1{
+    font-size: 40px;
+    font-weight: bold;
+    
+}
+
+.container a{
+    padding:11px;
+    background-color: aqua;
+    border-radius: 8px;
+    margin-top: 20px;
+    display: inline-block;
+}

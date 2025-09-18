@@ -1,0 +1,29 @@
+.container{
+    align-items: center;
+    height: 100%;
+}
+.card{
+    width: 30%;    
+}
+@media screen and (max-width: 700px) {
+    .card{
+        width: 70%;
+    }
+}
+.regiser-link{
+    color: rgb(11, 65, 216);
+}
+.preview{
+    margin: 0 auto;
+}
+.login{
+    color: orangered;
+}
+
+.title{
+    font-size: 40px;
+}
+.header{
+    text-align: center;
+
+}

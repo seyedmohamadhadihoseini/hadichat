@@ -1,0 +1,6 @@
+model Sessions {
+  id     String @id @default(uuid())
+  userId String
+  value  String
+  user   User   @relation(fields: [userId], references: [username],onDelete: Cascade,onUpdate: Cascade)
+}
