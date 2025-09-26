@@ -29,7 +29,7 @@ export default function SendMessageComponent({ storeMessage }: { storeMessage: (
                 setText("");
             }
         }} className={style.container}>
-            <input type="text" name="text" value={text} onChange={e => setText(e.target.value)} />
+            <textarea  name="text" value={text} onChange={e => setText(e.target.value)} />
             <button type="submit">send</button>
         </form>
     );

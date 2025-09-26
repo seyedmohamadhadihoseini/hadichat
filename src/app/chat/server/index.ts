@@ -4,7 +4,6 @@ import SaveFileToPublicDir from "@/app/functions/SaveFile";
 import prisma from "@/services/prisma";
 
 export async function AddUserChatAction(formData: FormData) {
-
     const usernames = formData.getAll("username") as string[];
     const title = formData.get("title");
     const profileData = formData.get("profile");

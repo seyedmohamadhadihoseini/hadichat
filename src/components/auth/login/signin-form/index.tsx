@@ -35,6 +35,7 @@ export default function LoginFormAuthComponent({ LoginServerAction }: { LoginSer
             toast.error("the username or password is wrong")
             setError("the username or password is wrong")
         }
+        setLoading(false)
     }
     return (
         <Form {...form}>

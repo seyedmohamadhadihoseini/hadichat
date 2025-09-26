@@ -12,7 +12,8 @@ const nextConfig = {
     },
     experimental:{
         serverActions:{
-            allowedOrigins:["chat.zilab.ru","*chat.zilab.ru"]
+            allowedOrigins:["chat.zilab.ru","*chat.zilab.ru"],
+            bodySizeLimit:"5MB"
         },
         
     },

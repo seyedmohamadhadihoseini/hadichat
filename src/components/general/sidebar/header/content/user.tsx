@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button";
 import { AddNewChat } from "@/lib/websocket/actions";
 import { useWebSocket } from "@/lib/websocket/context";
 import { DropdownMenuItem } from "@/components/ui/dropdown-menu";
-import { DialogComponent } from "@/component/general/dialog";
+import { DialogComponent } from "@/components/general/dialog";
 export default function NewUserHeaderComponent() {
 
     const [username, setUsername] = useState("");

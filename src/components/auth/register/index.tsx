@@ -8,9 +8,8 @@ import store from "../redux/store";
 import FormRegisterShadcn from "./form";
 import style from "./style.module.css"
 export default function RegisterNewUserComponent({ RegisterServerAction }:
-     { RegisterServerAction: (formData: FormData) => Promise<{ success: boolean, message: string }> }) {
+    { RegisterServerAction: (formData: FormData) => Promise<{ success: boolean, message: string }> }) {
 
-        
 
     return (
         <Provider store={store}>

@@ -47,7 +47,7 @@ export function WebSocketProvider({ children, user }: { children: React.ReactNod
             console.log('Disconnected from WebSocket');
         };
 
-    }, [user]);
+    }, []);
     return (
         <WebSocketContext.Provider value={{ data, socket }}>
             {children}

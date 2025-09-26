@@ -14,9 +14,11 @@
     background-color: aqua;
 }
 
-.container input {
+.container textarea {
     flex: 1;
-    border: 1px solid black;
     border-radius: 3px;
     padding: 8px;
+}
+.container textarea:focus{
+    border: 0;  
 }

@@ -14,23 +14,20 @@ export default async function RegisterServerAction(formData: FormData) {
     try {
 
         let profile = ""
-        console.log(`profile is ********************************************`)
-        console.log(`profile is ********************************************`)
-        console.log(profile)
         if (profileData) {
             profile = await SaveFileToPublicDir(profileData as File, "profiles") || "";
         }
-
         const user = await prisma.user.create({
             data: {
                 name, password, profile, username
             }
         })
         await GrantSession(user.username);
-    } catch {
+    } catch (error){
+        console.log(error)
         success = false
     }
     return {
-        success,message:"the username already exist"
+        success, message: "the username already exist"
     }
 }

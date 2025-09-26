@@ -2,7 +2,7 @@
 
 
 
-import HistoryChatComponent from "@/component/chat/history";
+import HistoryChatComponent from "@/components/chat/history";
 import { useChatData } from "@/hooks/use-chatData";
 import { useUserData } from "@/hooks/use-userData";
 
@@ -21,7 +21,6 @@ export default function HistoryChatApp() {
     
     useEffect(() => {
         const func = async () => {
-            
             setMessages(await Promise.all(data.messages.filter(message => message.chatId == chat.id)
                 .map(async (message) => {
                     return { ...message, sender: await GetUser(message.senderId) }

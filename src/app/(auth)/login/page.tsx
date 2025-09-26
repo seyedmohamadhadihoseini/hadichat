@@ -1,4 +1,4 @@
-import LoginUserComponent from "@/component/auth/login";
+import LoginUserComponent from "@/components/auth/login";
 import LoginServerAction from "./server/loginCheck";
 
 

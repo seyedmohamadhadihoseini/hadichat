@@ -1,4 +1,4 @@
-import RegisterNewUserComponent from "@/component/auth/register";
+import RegisterNewUserComponent from "@/components/auth/register";
 import RegisterServerAction from "./server";
 
 export default function RegisterDispaly()

@@ -11,12 +11,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/lib/redux/store";
 import { FindProfile, FindTitle } from "./server";
 import { useUserData } from "@/hooks/use-userData";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { changeChat } from "@/lib/redux/slices/chatSlice";
 export default function ContentSidebarComponent() {
     const { data } = useWebSocket()
     const [chatsDisplay, setChatsDisplay] = useState<React.ReactNode[]>();
-    const chatId = useSelector((state: RootState) => state.chat.chatId);
+    const pathname = usePathname();
+    const chatId = pathname.substring(pathname.lastIndexOf("/")+1);
     const { user } = useUserData()
     const router = useRouter()
     const dispatch = useDispatch()
@@ -26,7 +27,6 @@ export default function ContentSidebarComponent() {
                 return <SidebarMenuItem key={chat.id} className={`${style.itembar} ${chatId == chat.id ? style.active : ""}`}>
                     <SidebarMenuButton asChild>
                         <button onClick={() => {
-                            dispatch(changeChat(chat.id))
                             router.push(`/chat/${chat.id}`)
                         }}>
                             <Image alt={chat.title || ""} src={`${process.env.NEXT_PUBLIC_HOST}/api/profile?name=${await FindProfile(chat.id, user.username)}`} width={30} height={100} />
@@ -39,7 +39,7 @@ export default function ContentSidebarComponent() {
         }
         func()
 
-    }, [data,chatId,dispatch,user,router])
+    }, [data, chatId, dispatch, user, router])
 
     return (
         <SidebarContent>

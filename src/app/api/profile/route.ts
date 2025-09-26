@@ -12,7 +12,6 @@ export async function GET(request: NextRequest) {
     if (!existsSync("./public/profiles")) {
         mkdirSync("./public/profiles", { recursive: true });
     }
-    imageName = imageName.endsWith(".png")?imageName:`${imageName}.png`
     const filePath = path.resolve(".", `public/profiles/${imageName}`);
     let imageBuffer: Buffer | undefined;
 
